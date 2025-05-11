@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &64259588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1166713072699415887, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+  m_PrefabInstance: {fileID: 91577608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4ce2e894b878548a2e9a9cc1c72c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &64265815
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +266,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64265815}
   m_CullTransparentMesh: 1
+--- !u!1001 &91577608
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1166713072699415887, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 96334095}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 879.00354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 648.16187
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 54.166267
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480337290402062645, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288578917845393506, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_Name
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647999671629668845, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_SortingOrder
+      value: 99
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+--- !u!95 &96334095 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4783163025771041969, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+  m_PrefabInstance: {fileID: 91577608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &148909105
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,8 +442,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 708684292}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 64259588}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -1801,6 +1882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a372899ca7b867e4cb9f2fce45dd7298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!1 &828544636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4277,5 +4360,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 828544639}
+  - {fileID: 91577608}
   - {fileID: 708684291}
   - {fileID: 689665198}
