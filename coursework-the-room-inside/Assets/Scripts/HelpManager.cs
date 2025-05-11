@@ -1,47 +1,34 @@
 using UnityEngine;
 using System.Diagnostics;
+using System.IO;
 
-//public class HelpManager : MonoBehaviour
-//{
-//    public string helpFilePath = "Assets/Help/Справка.chm"; // Путь к файлу справки
+public class HelpManager : MonoBehaviour
+{
+    private string manualPath;
 
-//    void Update()
-//    {
-//        // Обработка нажатия F1
-//        if (Input.GetKeyDown(KeyCode.F1))
-//        {
-//            OpenHelpFile();
-//        }
-//    }
+    void Start()
+    {
+        // Путь к файлу в StreamingAssets
+        manualPath = Path.Combine(Application.streamingAssetsPath, "Справка.chm");
+    }
 
-//    // Метод для кнопки "Справка"
-//    public void OnHelpButtonClick()
-//    {
-//        OpenHelpFile();
-//    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            OpenManual();
+        }
+    }
 
-//    private void OpenHelpFile()
-//    {
-//        string fullPath = System.IO.Path.Combine(Application.streamingAssetsPath, helpFilePath);
-
-//        if (System.IO.File.Exists(fullPath))
-//        {
-//            try
-//            {
-//                Process.Start(fullPath);
-//            }
-//            catch (System.Exception e)
-//            {
-//                Debug.LogError("Ошибка открытия справки: " + e.Message);
-//                // Альтернативный вариант для WebGL
-//                Application.OpenURL("https://ваш-сайт/справка");
-//            }
-//        }
-//        else
-//        {
-//            Debug.LogWarning("Файл справки не найден по пути: " + fullPath);
-//            // Можно показать встроенное окно с текстом
-//            FindObjectOfType<UIManager>().ShowHelpPopup();
-//        }
-//    }
-//}
+    public void OpenManual()
+    {
+        if (File.Exists(manualPath))
+        {
+            Process.Start(manualPath);
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("Руководство не найдено по пути: " + manualPath);
+        }
+    }
+}
