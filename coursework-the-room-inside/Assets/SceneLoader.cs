@@ -31,6 +31,11 @@ public class SceneLoader : MonoBehaviour
         LoadSceneWithTransition("MainMenu");
     }
 
+    public void OpenSet()
+    {
+        LoadSceneWithTransition("MainMenuSet");
+    }
+
     // --- Приватная универсальная функция перехода ---
     private void LoadSceneWithTransition(string sceneName)
     {
