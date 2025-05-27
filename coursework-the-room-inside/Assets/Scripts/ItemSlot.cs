@@ -8,7 +8,13 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            RectTransform item = eventData.pointerDrag.GetComponent<RectTransform>();
+
+            // Переместить предмет в слот
+            item.anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+
+            // Установить фиксированный размер
+            item.sizeDelta = new Vector2(120f, 120f);
         }
     }
 }
