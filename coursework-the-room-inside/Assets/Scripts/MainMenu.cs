@@ -5,9 +5,6 @@ using static System.TimeZoneInfo;
 
 public class MainMenu : MonoBehaviour
 {
-    public Animator transition;
-    public float transitionTime = 1f;
-
     public void ExitButton()
     {
         Application.Quit();

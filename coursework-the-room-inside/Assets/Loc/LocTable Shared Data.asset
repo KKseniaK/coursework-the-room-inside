@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: LocTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: LocTable
+  m_TableCollectionNameGuidString: af75f0ca7dd69174195ca9e6416913b9
+  m_Entries:
+  - m_Id: 37861842944
+    m_Key: mainMenu.start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106702954496
+    m_Key: mainMenu.set
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141234659328
+    m_Key: mainMenu.review
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225875714048
+    m_Key: mainMenu.exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4960571342315520
+    m_Key: mainMenuSet.menuHead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4969391883935744
+    m_Key: mainMenuSet.langHead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4969590123520000
+    m_Key: mainMenuSet.langEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4969793819893760
+    m_Key: mainMenuSet.langRU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4969981653409792
+    m_Key: mainMenuSet.soundHead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4970381383163904
+    m_Key: mainMenuSet.musicHead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5006884675117056
+    m_Key: 'mainMenuSet.BackToMainMenuButton '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5007238137503744
+    m_Key: gameMenu.BackToGameButton
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 348354517940044131
+  references:
+    version: 2
+    RefIds:
+    - rid: 348354517940044131
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1748469897063
