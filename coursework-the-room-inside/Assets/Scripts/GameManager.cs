@@ -3,12 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // URL Google Forms для сбора отзывов
-    [SerializeField] private string feedbackUrl = "https://forms.gle/your-form-url";
+    private string feedbackUrl = "https://docs.google.com/forms/d/e/1FAIpQLScF7qLBIFw6d0m7RljGOZDRvtEHyQzYnEjRuMRp7tFDYc2_EA/viewform?usp=preview";
 
     private void Update()
     {
-        // Обработка нажатия Esc
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
