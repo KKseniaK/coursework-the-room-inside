@@ -5,14 +5,12 @@ using UnityEngine.UI;
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] private Canvas canvas;
-    [SerializeField] private Image itemImage; // Ссылка на Image компонент предмета
-    [SerializeField] private Color normalColor = Color.white;
+    [SerializeField] private Image itemImage;
     [SerializeField] private Color selectedColor = Color.gray;
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private ItemSlot currentSlot;
-    private bool isDragging = false;
 
     private void Awake()
     {
@@ -39,7 +37,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag");
-        isDragging = true;
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
 
@@ -55,18 +52,29 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
-        isDragging = false;
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
-        // Если предмет не был помещен в другой слот, возвращаем его в исходный
+        GameObject hitObject = eventData.pointerCurrentRaycast.gameObject;
+
+        // Проверяем: под мышкой вода и стакан не полный
+        if (hitObject != null && hitObject.CompareTag("WaterStream"))
+        {
+            Glass glass = GetComponent<Glass>();
+            if (glass != null && !glass.isFilled)
+            {
+                glass.FillWithWater();
+            }
+        }
+
+        // Возврат в слот, если не попал в другой слот
         if (eventData.pointerCurrentRaycast.gameObject == null ||
             eventData.pointerCurrentRaycast.gameObject.GetComponent<ItemSlot>() == null)
         {
             ReturnToSlot();
         }
     }
+
 
     public void ReturnToSlot()
     {

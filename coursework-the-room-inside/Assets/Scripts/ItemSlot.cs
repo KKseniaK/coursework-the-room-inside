@@ -13,28 +13,42 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null)
         {
-            DragDrop dragItem = eventData.pointerDrag.GetComponent<DragDrop>();
-            RectTransform item = eventData.pointerDrag.GetComponent<RectTransform>();
-
-            // Если в слоте уже есть предмет, меняем их местами
+            // Если в слоте уже есть предмет — выходим
             if (transform.childCount > 0)
             {
-                Transform existingItem = transform.GetChild(0);
-                existingItem.SetParent(dragItem.GetCurrentSlot().transform, false);
-                existingItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                existingItem.GetComponent<DragDrop>().SetSlot(dragItem.GetCurrentSlot());
-                dragItem.GetCurrentSlot().ResetSlotColor();
+                Debug.Log("Слот уже занят. Действие отменено.");
+                return;
             }
+
+            DragDrop dragItem = eventData.pointerDrag.GetComponent<DragDrop>();
+            RectTransform item = eventData.pointerDrag.GetComponent<RectTransform>();
+            RectTransform slotRect = GetComponent<RectTransform>();
 
             // Устанавливаем новый предмет в слот
             item.SetParent(transform, false);
             item.anchoredPosition = Vector2.zero;
-            item.sizeDelta = new Vector2(120f, 120f);
+
+            // Масштабируем с сохранением пропорций до 80% размера слота
+            Vector2 slotSize = slotRect.rect.size;
+            Vector2 originalSize = item.sizeDelta;
+
+            if (originalSize.x == 0 || originalSize.y == 0)
+            {
+                Debug.LogWarning("Размер объекта равен нулю. Масштабирование невозможно.");
+            }
+            else
+            {
+                float scaleFactor = 0.8f * Mathf.Min(slotSize.x / originalSize.x, slotSize.y / originalSize.y);
+                Vector2 newSize = originalSize * scaleFactor;
+                item.sizeDelta = newSize;
+            }
 
             dragItem.SetSlot(this);
             ResetSlotColor();
         }
     }
+
+
 
     public void SetSlotColor(Color color)
     {
