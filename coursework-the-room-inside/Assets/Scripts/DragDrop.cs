@@ -57,7 +57,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
         GameObject hitObject = eventData.pointerCurrentRaycast.gameObject;
 
-        // Проверяем: под мышкой вода и стакан не полный
+        // === Попадание на струю воды ===
         if (hitObject != null && hitObject.CompareTag("WaterStream"))
         {
             Glass glass = GetComponent<Glass>();
@@ -65,15 +65,23 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             {
                 glass.FillWithWater();
             }
+
+            ReturnToSlot();
+            return;
         }
 
-        // Возврат в слот, если не попал в другой слот
-        if (eventData.pointerCurrentRaycast.gameObject == null ||
-            eventData.pointerCurrentRaycast.gameObject.GetComponent<ItemSlot>() == null)
+        // === Попадание на миску ===
+        if (hitObject != null && hitObject.GetComponent<Bowl>() != null)
         {
-            ReturnToSlot();
+            Bowl bowl = hitObject.GetComponent<Bowl>();
+            bowl.TryFill(gameObject);
+            return;
         }
+
+        // === Никуда не попали ===
+        ReturnToSlot();
     }
+
 
 
     public void ReturnToSlot()
