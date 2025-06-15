@@ -48,4 +48,16 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneName);
     }
+
+    // ƒобавл€ем метод дл€ тестировани€ корутины
+    public void Test_LoadSceneCoroutine(string sceneName)
+    {
+        StartCoroutine(LoadSceneCoroutine(sceneName));
+    }
+
+    // ƒобавл€ем метод дл€ проверки работы корутины
+    public bool IsCoroutineRunning()
+    {
+        return GetComponent<MonoBehaviour>().IsInvoking();
+    }
 }

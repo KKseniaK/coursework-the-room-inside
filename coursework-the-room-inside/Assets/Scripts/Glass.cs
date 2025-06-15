@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Glass : MonoBehaviour
 {
     public bool isFilled = false;
-    [SerializeField] private Sprite filledSprite;
+    [SerializeField] public Sprite filledSprite;
 
     public void FillWithWater()
     {

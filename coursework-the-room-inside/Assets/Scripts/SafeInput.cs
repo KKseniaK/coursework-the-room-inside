@@ -1,15 +1,17 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class SafeInput : MonoBehaviour
 {
+    //public TMP_Text displayText;
     public Text displayText;
     public GameObject displayPanel;
 
-    public Canvas closedSafeCanvas;    // Canvas с закрытым сейфом
-    public Canvas openedSafeCanvas;    // Canvas с открытым сейфом
+    public Canvas closedSafeCanvas;
+    public Canvas openedSafeCanvas;
 
     public string correctCode = "8345";
 
@@ -18,10 +20,15 @@ public class SafeInput : MonoBehaviour
 
     public float hideDelay = 2f;
 
-    private void Start()
+    protected virtual void Start()
     {
-        displayPanel.SetActive(false);
-        openedSafeCanvas.gameObject.SetActive(false); // открыт — выключен в начале
+        if (displayPanel == null || displayText == null || closedSafeCanvas == null || openedSafeCanvas == null)
+        {
+            Debug.LogWarning("SafeInput: Не все ссылки назначены в инспекторе.");
+        }
+
+        displayPanel?.SetActive(false);
+        openedSafeCanvas?.gameObject.SetActive(false);
     }
 
     public void AppendDigit(string digit)
@@ -86,10 +93,7 @@ public class SafeInput : MonoBehaviour
     {
         yield return new WaitForSeconds(hideDelay);
 
-        // Выключаем canvas с закрытым сейфом
         closedSafeCanvas.gameObject.SetActive(false);
-
-        // Включаем canvas с открытым сейфом
         openedSafeCanvas.gameObject.SetActive(true);
     }
 }

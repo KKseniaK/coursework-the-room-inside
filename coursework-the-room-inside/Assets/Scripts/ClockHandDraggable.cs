@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClockHandDraggable : MonoBehaviour, IDragHandler, IBeginDragHandler
+public class ClockHandDraggable : MonoBehaviour, IDragHandler
 {
     public Transform pivot; // Центр вращения — ClockPivot
     public bool isHourHand = false; // Для логики взаимодействия
@@ -10,11 +10,6 @@ public class ClockHandDraggable : MonoBehaviour, IDragHandler, IBeginDragHandler
     {
         if (pivot == null)
             pivot = transform.parent;
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        // Можно сделать звук или визуал начала вращения
     }
 
     public void OnDrag(PointerEventData eventData)

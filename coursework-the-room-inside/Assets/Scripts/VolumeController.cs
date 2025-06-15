@@ -3,10 +3,11 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
+
 
 public class VolumeController : MonoBehaviour
 {
+
     public string volumeParameter = "MasterVolume";
     public AudioMixer mixer;
     public Slider slider;
@@ -35,4 +36,6 @@ public class VolumeController : MonoBehaviour
     {
         PlayerPrefs.SetFloat(volumeParameter, volumeValue);
     }
+
+    public float CurrentVolumeDB => volumeValue;
 }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
     [SerializeField] private Image slotImage;
-    [SerializeField] private Color normalColor = Color.white;
-    [SerializeField] private Color emptyColor = Color.gray;
+    [SerializeField] public Color normalColor = Color.white;
+    [SerializeField] public Color emptyColor = Color.gray;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -44,29 +44,6 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             }
 
             dragItem.SetSlot(this);
-            ResetSlotColor();
         }
     }
-
-
-
-    public void SetSlotColor(Color color)
-    {
-        if (slotImage != null)
-            slotImage.color = color;
-    }
-
-    public void ResetSlotColor()
-    {
-        if (slotImage != null)
-            slotImage.color = normalColor;
-    }
-
-    public void SetEmptyColor()
-    {
-        if (slotImage != null)
-            slotImage.color = emptyColor;
-    }
-
-    
 }

@@ -363,6 +363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 3288578917845393506, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8647999671629668845, guid: 0362400230f454b4aac3474bf3bc3701, type: 3}
       propertyPath: m_SortingOrder
       value: 99

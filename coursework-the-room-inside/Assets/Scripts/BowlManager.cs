@@ -5,7 +5,7 @@ public class BowlManager : MonoBehaviour
     public Bowl foodBowl;
     public Bowl waterBowl;
 
-    private bool animationPlayed = false;
+    public bool animationPlayed = false;
 
     public void CheckBowls()
     {

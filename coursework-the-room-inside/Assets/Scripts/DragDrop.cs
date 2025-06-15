@@ -12,6 +12,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
     private ItemSlot currentSlot;
 
+    // Делаем canvas доступным для тестов
+    public Canvas Canvas
+    {
+        get => canvas;
+        set => canvas = value;
+    }
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -27,11 +33,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         // Находим текущий слот
         currentSlot = GetComponentInParent<ItemSlot>();
 
-        if (currentSlot != null)
-        {
-            // Делаем слот серым
-            currentSlot.SetSlotColor(selectedColor);
-        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -82,15 +83,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         ReturnToSlot();
     }
 
-
-
     public void ReturnToSlot()
     {
         if (currentSlot != null)
         {
             transform.SetParent(currentSlot.transform, false);
             rectTransform.anchoredPosition = Vector2.zero;
-            currentSlot.ResetSlotColor();
         }
     }
 
