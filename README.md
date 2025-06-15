@@ -1,14 +1,27 @@
-# coursework-the-room-inside
+# coursework-the-room-inside  
+##  Демоверсия игры в жанре Point-and-Click / Point-and-Click Game Demo
 
-# The Room: Inside — Git Commit Convention
+## О проекте / About the Project
 
-## 1. Commit Message Format
+**RU:**  
+Демонстрационная версия 2D point-and-click игры, созданная на игровом движке Unity в рамках учебного проекта.  
+Игроку предстоит взаимодействовать с игровым миром, решать головоломки и следовать короткому сюжету через несколько сцен.  
+Главная цель проекта — освоить практические навыки разработки игр: от проектирования логики до написания тестов.
+
+**EN:**  
+A 2D point-and-click game demo developed in Unity as an educational project.  
+Players interact with the environment, solve puzzles, and follow a short storyline across several scenes.  
+The main purpose of this project is to gain practical experience in game development — from logic design to unit testing.
+
+## The Room: Inside — Git Commit Convention
+
+### 1. Commit Message Format
 Используем **Conventional Commits** с уточнениями для Unity:
 ```bash
 <тип>(<область>): <сообщение>
 ```
 
-## 2. Commit Types
+### 2. Commit Types
 ```markdown
 | Type       | Description                          | Example                          |
 |------------|--------------------------------------|----------------------------------|
@@ -21,7 +34,7 @@
 | `chore`    | Вспомогательные изменения            | `chore: update dependencies`     |
 | `asset`    | Работа с ассетами                    | `asset(sound): add meow FX`      |
 ```
-## 3. Scopes (Области)
+### 3. Scopes (Области)
 Группируем по компонентам игры:
 
 ```markdown
@@ -31,7 +44,7 @@
 - `ui`       — интерфейсы
 - `audio`    — звуки и музыка
 ```
-## 4. Примеры
+### 4. Примеры
 ```bash
 # С фичей и областью:
 git commit -m "feat(room): add destructible objects"
