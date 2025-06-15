@@ -1,10 +1,11 @@
 using UnityEngine;
-using TMPro;
 using System.Collections;
+using UnityEngine.UI;
+
 
 public class SafeInput : MonoBehaviour
 {
-    public TMP_Text displayText;
+    public Text displayText;
     public GameObject displayPanel;
 
     public Canvas closedSafeCanvas;    // Canvas с закрытым сейфом
