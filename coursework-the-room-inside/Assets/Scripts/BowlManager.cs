@@ -4,16 +4,44 @@ public class BowlManager : MonoBehaviour
 {
     public Bowl foodBowl;
     public Bowl waterBowl;
+    public GameObject puzzle;
 
-    public bool animationPlayed = false;
+    public GameObject pawCanvas; 
+    public PawAnimationController pawAnimationController;
 
+    private bool animationPlayed = false;
+    private void Start()
+    {
+        pawAnimationController.AnimationCompleted += ResetStage; 
+    }
     public void CheckBowls()
     {
         if (!animationPlayed && foodBowl.isFilled && waterBowl.isFilled)
         {
             animationPlayed = true;
-            Debug.Log("Обе миски заполнены! Запускаем анимацию лапок...");
+
+            pawCanvas.SetActive(true);
+
+            pawAnimationController.StartSequence();
+
+            
         }
+        
+    }
+
+    private void ResetStage()
+    {
+        Debug.Log("Анимация завершена — возвращаем сцену в начальное состояние");
+
+        // Миски обнуляются
+        foodBowl.ResetBowl();
+        waterBowl.ResetBowl();
+
+        // Включаем объект с пазлом 
+        puzzle.SetActive(true);
+
+        animationPlayed = false;
     }
 }
+
 

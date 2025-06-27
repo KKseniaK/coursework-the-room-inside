@@ -32,7 +32,7 @@ public class BowlTests
         Object.DestroyImmediate(testItem);
     }
 
-    // --- Тесты для миски с водой ---
+
     [UnityTest]
     public IEnumerator TryFill_WaterBowl_AcceptsFilledGlass()
     {

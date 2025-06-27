@@ -9,6 +9,7 @@ TagManager:
   - FoodBowl
   - FoodItem
   - FilledGlass
+  - PaletteZone
   layers:
   - Default
   - TransparentFX

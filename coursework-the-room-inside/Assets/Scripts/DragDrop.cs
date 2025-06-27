@@ -58,6 +58,19 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
         GameObject hitObject = eventData.pointerCurrentRaycast.gameObject;
 
+        // === Попадание на зону мольберта ===
+        if (hitObject != null && hitObject.CompareTag("PaletteZone"))
+        {
+            Debug.Log("Палитра использована у мольберта");
+
+            // Активируем большую палитру
+            hitObject.GetComponent<PaletteDropZone>().ShowBigPalette();
+
+            // Удаляем палитру из инвентаря
+            Destroy(gameObject);
+            return;
+        }
+
         // === Попадание на струю воды ===
         if (hitObject != null && hitObject.CompareTag("WaterStream"))
         {

@@ -25,5 +25,4 @@ public class GameManager : MonoBehaviour
         Application.OpenURL(feedbackUrl);
         Debug.Log("FeedbackForm called");
     }
-}
-
+}  

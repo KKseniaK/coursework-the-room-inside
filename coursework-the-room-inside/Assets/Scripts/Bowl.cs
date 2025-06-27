@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ public class Bowl : MonoBehaviour
     [SerializeField] public Sprite filledSprite;
     private Image bowlImage;
     public bool isFilled = false;
+
+    public BowlManager bowlManager; // Добавляем ссылку
 
     private void Awake()
     {
@@ -36,7 +39,21 @@ public class Bowl : MonoBehaviour
         color.a = 1f;
         bowlImage.color = color;
         isFilled = true;
+
         Debug.Log($"Миска ({(isWaterBowl ? "вода" : "еда")}) наполнена!");
+
+        // Уведомляем менеджер
+        if (bowlManager != null)
+            bowlManager.CheckBowls();
     }
 
+    public void ResetBowl()
+    {
+        isFilled = false;
+        bowlImage.sprite = null;
+        Color color = bowlImage.color;
+        color.a = 0f;
+        bowlImage.color = color;
+    }
 }
+

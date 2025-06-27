@@ -6,14 +6,13 @@ using TMPro;
 
 public class SafeInput : MonoBehaviour
 {
-    //public TMP_Text displayText;
-    public Text displayText;
+    public TMP_Text displayText;
     public GameObject displayPanel;
 
     public Canvas closedSafeCanvas;
     public Canvas openedSafeCanvas;
 
-    public string correctCode = "8345";
+    public string correctCode = "1983";
 
     private string currentInput = "";
     private bool showingResult = false;
