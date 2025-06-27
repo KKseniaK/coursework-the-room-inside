@@ -63,6 +63,30 @@ MonoBehaviour:
     m_Key: gameMenu.BackToGameButton
     m_Metadata:
       m_Items: []
+  - m_Id: 10705969767899136
+    m_Key: bed.Phrase1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10706535541760000
+    m_Key: bed.Phrase2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10706553992503296
+    m_Key: bed.Phrase3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10708133965848576
+    m_Key: bed.MeowText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10708378263085056
+    m_Key: bed.IntroBtn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10709320496701440
+    m_Key: bed.ClickHint
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

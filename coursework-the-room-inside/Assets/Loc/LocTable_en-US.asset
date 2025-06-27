@@ -66,6 +66,30 @@ MonoBehaviour:
     m_Localized: Back
     m_Metadata:
       m_Items: []
+  - m_Id: 10705969767899136
+    m_Localized: I'm tired
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10706535541760000
+    m_Localized: "Sometimes it feels like \nnone of this matters anymore"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10706553992503296
+    m_Localized: "Why me? \nWhat is all this even for?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10708133965848576
+    m_Localized: MEOW...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10708378263085056
+    m_Localized: What's it???
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10709320496701440
+    m_Localized: Press to continue
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -4,16 +4,24 @@ public class BowlManager : MonoBehaviour
 {
     public Bowl foodBowl;
     public Bowl waterBowl;
-    public GameObject puzzle;
 
-    public GameObject pawCanvas; 
+    public GameObject puzzle;
+    public GameObject catOnChair; //  Кот, сидящий на стуле
+
+    public GameObject pawCanvas;
     public PawAnimationController pawAnimationController;
 
     private bool animationPlayed = false;
+
     private void Start()
     {
-        pawAnimationController.AnimationCompleted += ResetStage; 
+        if (pawAnimationController != null)
+            pawAnimationController.AnimationCompleted += ResetStage;
+
+        if (catOnChair != null)
+            catOnChair.SetActive(false); // Кот изначально невидим
     }
+
     public void CheckBowls()
     {
         if (!animationPlayed && foodBowl.isFilled && waterBowl.isFilled)
@@ -21,27 +29,23 @@ public class BowlManager : MonoBehaviour
             animationPlayed = true;
 
             pawCanvas.SetActive(true);
-
             pawAnimationController.StartSequence();
-
-            
         }
-        
     }
 
     private void ResetStage()
     {
         Debug.Log("Анимация завершена — возвращаем сцену в начальное состояние");
 
-        // Миски обнуляются
         foodBowl.ResetBowl();
         waterBowl.ResetBowl();
 
-        // Включаем объект с пазлом 
-        puzzle.SetActive(true);
+        if (puzzle != null)
+            puzzle.SetActive(true);
+
+        if (catOnChair != null)
+            catOnChair.SetActive(true); //  Включаем кота
 
         animationPlayed = false;
     }
 }
-
-
