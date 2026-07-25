@@ -47,7 +47,7 @@ Players navigate through a sequence of puzzle rooms, where every uncovered item 
 
 ## Level Design & Architecture
 
-![Level Design Scheme](assets/level-design-scheme.png)
+![Level Design Scheme](assets/level-design-scheme.jpg)
 
 ### Conceptual Flow & System Design:
 * **Scene Graph:** Mapped flow between main menu, loading states, 4 main room walls, and sub-locations.
