@@ -9,7 +9,7 @@
 
 ---
 
-![Cat Transformation](assets/cat-transformation.gif)
+![Cat Transformation](assets/cat_transition.gif)
 
 ---
 
