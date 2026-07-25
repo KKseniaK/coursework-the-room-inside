@@ -9,7 +9,7 @@
 
 ---
 
-![Cat State Shift](assets/cat-transformation.gif)
+![Cat Transformation](assets/cat-transformation.gif)
 
 ---
 
@@ -21,35 +21,38 @@ Developed as a university coursework project centered on clean C# software archi
 
 ---
 
-## Storyline & Key Entity
+## Storyline
 
 > *"You wake up in an unfamiliar room. The door is locked, objects around you feel unsettlingly familiar, and your only clues are hidden in the details of the environment..."*
 
-Players navigate through a sequence of puzzle rooms, where every uncovered item and memory brings them closer to understanding how and why they ended up inside.
-
-Central to the gameplay and narrative is the mysterious Cat NPC, which dynamically alters its state and appearance as the player progresses and unlocks key narrative triggers.
+Players navigate through a sequence of puzzle rooms, where every uncovered item brings them closer to understanding how and why they ended up inside. Central to the narrative is the Cat NPC, which dynamically transforms its appearance as progression triggers are unlocked.
 
 ---
 
-## Gameplay & Interface Screenshots
+## Screenshots & Interface
 
-| Kitchen & Scene Hierarchy | Settings & Localization |
-| :---: | :---: |
-| ![Kitchen Gameplay and Unity Inspector](assets/kitchen-editor-gameplay.png) | ![Settings and Language Menu](assets/settings-ui.png) |
+### Environment & Room Perspectives
+![Room Views Overview](assets/rooms.jpg)
 
-* **Environment & Inspection:** Detailed interactive areas with custom inventory scaling, zoomable sub-scenes (sink, bowls, closets), and stateful environment objects.
-* **Localization & Options:** Integrated multi-language toggle (English/Russian) and volume controls mapped to custom cat-themed sliders.
+* **4-Wall Room Navigation:** Complete 360-degree room exploration using side arrows.
+* **Sub-Locations:** Interactive secondary scenes including the Kitchen and Bathroom.
+
+### Settings & UI
+![Settings Menu and Localization](assets/settings-ui.png)
+
+* **Custom Sliders:** Audio and music controls featuring custom cat-shaped volume indicators.
+* **Localization Support:** Instant language switching between English and Russian.
 
 ---
 
-## Game Architecture & Level Design
+## Level Design & Architecture
 
-![Level Design Scheme and Puzzle Graph](assets/level-design-scheme.png)
+![Level Design Scheme](assets/level-design-scheme.png)
 
-### Structural Overview:
-* **4-Wall Navigation System:** Scene flow mapped across four directional views per room with interconnected sub-locations (Kitchen, Bathroom).
-* **Puzzle Dependency Graph:** Interlinked logic chain including code locks, item combinations, environmental interactions, and notebook clues.
-* **UI & Control Mechanics:** Drag-and-drop inventory integration, contextual cursor state changes, and interactive zoom targets.
+### Conceptual Flow & System Design:
+* **Scene Graph:** Mapped flow between main menu, loading states, 4 main room walls, and sub-locations.
+* **Puzzle Chain:** Interconnected logic puzzle dependencies including PC terminals, notebook codes, wall paintings, safe locks, and clock mechanics.
+* **Interaction Features:** Context-aware cursor changes, drag-and-drop object interactions, and stateful NPC behavior.
 
 ---
 
